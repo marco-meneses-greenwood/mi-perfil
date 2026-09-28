@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlanta: Learning an Operation From the Inside | Marco Meneses</title>
+<meta name="description" content="Case study excerpt: Marco Meneses on a cross-functional facility automation assignment at SupplyHouse.com's Atlanta fulfillment center, Summer 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23080c14'/><text y='.9em' font-size='72' font-family='serif' font-weight='900' fill='%23c9a84c' x='12'>M</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#05070a;--surface:#0d121a;--surface-alt:#161e2b;
+    --border:rgba(201,168,76,0.2);--gold:#c9a84c;--gold-light:#e8c96a;
+    --text:#f0f0f0;--text-muted:#94a3b8;--accent:#2dd4a0;
+}
+html.light{
+    --bg:#f5f3ee;--surface:#ffffff;--surface-alt:#ede9e0;
+    --border:rgba(139,90,20,0.18);--text:#18181b;--text-muted:#52525b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;transition:background .3s,color .3s;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(201,168,76,0.05) 1px,transparent 0);background-size:40px 40px;z-index:-1;pointer-events:none;}
+.container{max-width:720px;margin:0 auto;padding:0 2rem;}
+
+header{padding:1.5rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+.logo{font-family:'Playfair Display',serif;font-weight:900;color:var(--gold);text-decoration:none;font-size:1rem;letter-spacing:2px;text-transform:uppercase;}
+.theme-toggle{background:transparent;border:1px solid var(--border);color:var(--text-muted);font-family:'DM Mono',monospace;font-size:.65rem;padding:5px 10px;border-radius:20px;cursor:pointer;transition:.2s;letter-spacing:.05em;}
+.theme-toggle:hover{border-color:var(--gold);color:var(--gold);}
+
+.wip{margin:2.5rem 0 0;background:var(--surface-alt);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:.9rem 1.2rem;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--text-muted);letter-spacing:.03em;line-height:1.6;}
+.wip strong{color:var(--accent);}
+
+article{padding:2rem 0 3rem;}
+.eyebrow{font-family:'DM Mono',monospace;color:var(--gold);font-size:.7rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:1rem;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,2.9rem);line-height:1.12;margin-bottom:1rem;}
+.meta{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;padding-bottom:1.8rem;border-bottom:1px solid var(--border);margin-bottom:2rem;}
+article p{font-size:1.02rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.5rem;}
+article p strong{color:var(--text);font-weight:500;}
+.lede{font-size:1.1rem;color:var(--text);}
+.turn{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.55;color:var(--text);border-left:2px solid var(--gold);padding-left:1.3rem;margin:2.2rem 0;}
+.limits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.6rem;margin-top:2.5rem;}
+.limits .label{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--gold);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.7rem;}
+.limits p{font-size:.88rem;margin-bottom:0;}
+
+footer{border-top:1px solid var(--border);padding:1.8rem 0 3rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+footer a{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--text-muted);text-decoration:none;transition:.15s;}
+footer a:hover{color:var(--gold);}
+.back{color:var(--gold);}
+@media(max-width:600px){.container{padding:0 1.3rem;}.turn{font-size:1.1rem;}}
+</style>
+</head>
+<body>
+
+<div class="container">
+<header>
+    <a href="./index.html" class="logo">M. Meneses</a>
+    <button class="theme-toggle" id="theme-toggle">&#9681; LIGHT</button>
+</header>
+
+<div class="wip"><strong>EXCERPT &middot; IN PROGRESS.</strong> This is the short version. The full write-up is being expanded &mdash; check back, or ask me about it directly.</div>
+
+<article>
+    <div class="eyebrow">Case Study</div>
+    <h1>Learning an Operation From the Inside</h1>
+    <div class="meta">SupplyHouse.com &middot; Atlanta Fulfillment Center &middot; Summer 2026</div>
+
+    <p class="lede">My internship happened on a screen. Forty supplier brands, 9,245 SKUs, a forecast queue in RELEX, and a daily judgment call about which numbers had actually moved and which were just noise. Then SupplyHouse flew me to Atlanta for a facility automation decision I had no background in.</p>
+
+    <p>I was put on a cross-functional team designing the layout for a new distribution facility built around robotics from the start, rather than automation retrofitted later into a building that was never laid out for it. I knew less about how a warehouse floor works than anyone else in that room. <strong>So I contributed what I had</strong> &mdash; the demand planning perspective &mdash; and I built the deck. A teammate with the operations background presented it.</p>
+
+    <p class="turn">My team didn't win. The proposal that did wasn't the most technically optimized. It was the one that made room for the people who would spend a full shift in the building, down to a Starbucks on site.</p>
+
+    <p>At first that sounded soft to me. The operations leaders in that room didn't hear it that way, and they were right: a facility is a throughput system, and it is also somewhere people work eight hours a day. The team that designed for both won the room.</p>
+
+    <p>Two things came back with me. The questions I assumed were too basic to ask turned out to be worth asking &mdash; the uninformed view had value partly because it was uninformed, and saying plainly what I was observing moved the conversation further than staying quiet would have. And the numbers stopped being abstract. I knew what building they landed in, and who was picking the SKU when my forecast was wrong.</p>
+
+    <div class="limits">
+        <div class="label">What this is not</div>
+        <p>I'm not claiming I shaped the decision. The robotics vendor, the contract status, and the facility specifics were not public, so there is no outcome to report here. What I have is the experience of being dropped into an operation I didn't understand and making myself useful inside it &mdash; plus a demand planner's sense of how forecast accuracy carries into slotting, robotics utilization, and fulfillment capacity.</p>
+    </div>
+</article>
+
+<footer>
+    <a href="./index.html" class="back">&larr; Back to portfolio</a>
+    <a href="mailto:marco.a.meneses05@gmail.com">marco.a.meneses05@gmail.com</a>
+</footer>
+</div>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.documentElement.classList.toggle("light");
+    document.getElementById("theme-toggle").textContent =
+        document.documentElement.classList.contains("light") ? "\u25D0 DARK" : "\u25D1 LIGHT";
+});
+</script>
+</body>
+</html>
