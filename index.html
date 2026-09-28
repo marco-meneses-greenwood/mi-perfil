@@ -264,7 +264,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;display:flex;justify-co
         <!-- Upload all three PDFs to the repo root with these exact names:
              Marco_Meneses_Resume_SupplyChain.pdf
              Marco_Meneses_Resume_FinTech.pdf
-             Marco_Meneses_Resume.pdf -->
+             Marco_Meneses_Resume_Default.pdf -->
         <a href="#resumes" class="btn-outline">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Resume
@@ -514,7 +514,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;display:flex;justify-co
         <div class="resume-track">General</div>
         <div class="resume-title">Business Administration &amp; Analytics</div>
         <div class="resume-desc">The balanced version, weighting demand planning and multi-site operations evenly. Use this one if the role spans both tracks or sits outside them.</div>
-        <a href="./Marco_Meneses_Resume.pdf" download="Marco_Meneses_Resume.pdf" class="resume-dl">
+        <a href="./Marco_Meneses_Resume_Default.pdf" download="Marco_Meneses_Resume.pdf" class="resume-dl">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             DOWNLOAD PDF
         </a>
@@ -615,7 +615,7 @@ const ROLE_QUERIES = {
 const RESUMES = {
     finance:     { file: "./Marco_Meneses_Resume_FinTech.pdf",     name: "Marco_Meneses_Resume_FinTech.pdf",     label: "Analytics & FinTech Resume" },
     supplychain: { file: "./Marco_Meneses_Resume_SupplyChain.pdf", name: "Marco_Meneses_Resume_SupplyChain.pdf", label: "Supply Chain & Ops Resume" },
-    general:     { file: "./Marco_Meneses_Resume.pdf",             name: "Marco_Meneses_Resume.pdf",             label: "General Resume" }
+    general:     { file: "./Marco_Meneses_Resume_Default.pdf",     name: "Marco_Meneses_Resume.pdf",             label: "General Resume" }
 };
 
 // Weight 3 = a term that only belongs to one track. Weight 1 = a generic
@@ -818,4 +818,5 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 </script>
 </body>
 </html>
+
 
